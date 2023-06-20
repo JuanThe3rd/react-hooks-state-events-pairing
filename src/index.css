@@ -10,3 +10,25 @@ body {
 .App {
   text-align: center;
 }
+
+.content-divider {
+  border: 0.5px solid rgb(165, 165, 165);
+  max-width: 90%;
+  margin: auto;
+}
+
+iframe {
+  margin-top: 1rem;
+}
+
+.like-btn {
+  height: 1.75rem;
+}
+
+button {
+  margin-bottom: 1rem;
+}
+
+.hidden {
+  display: none
+}

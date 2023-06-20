@@ -1,18 +1,21 @@
-import video from "../data/video.js";
+import React, {useState} from "react"
+import video from "../data/video";
+import VideoContent from "./VideoContent"
+import Comments from "./Comments"
 
 function App() {
-  console.log("Here's your data:", video);
+  const [isHidden, setIsHidden] = useState(false);
+
+  function handleHideBtn(){
+    setIsHidden(!isHidden);
+  }
 
   return (
     <div className="App">
-      <iframe
-        width="919"
-        height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameBorder="0"
-        allowFullScreen
-        title="Thinking in React"
-      />
+      <VideoContent videoContent={video}/>
+      <button onClick={handleHideBtn}>{isHidden ? "Show Comments" : "Hide Comments"}</button>
+      <div className="content-divider"></div>
+      <Comments comments={video.comments} isHidden={isHidden}/>
     </div>
   );
 }
